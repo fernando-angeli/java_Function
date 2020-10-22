@@ -3,7 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entities.Product;
@@ -28,10 +27,7 @@ public class Program {
 		 * A função map só funciona para stream, por isso foi necessário
 		 * converser a lista para stream.
 		 */
-	
-		Function<Product, String> func = p -> p.getName().toUpperCase();
-		
-		List<String> names = list.stream().map(func).collect(Collectors.toList());
+		List<String> names = list.stream().map(Product::nonStaticUpperCaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 		
