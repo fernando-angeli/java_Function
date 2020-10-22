@@ -27,7 +27,7 @@ public class Program {
 		 * A função map só funciona para stream, por isso foi necessário
 		 * converser a lista para stream.
 		 */
-		List<String> names = list.stream().map(new UpperCaseName()).collect(Collectors.toList());
+		List<String> names = list.stream().map(Product::staticUpperCaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 		
